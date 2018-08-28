@@ -11,5 +11,11 @@ https://www.slideshare.net/p3infotech_solutions/python-programming-essentials-m3
 
 # processes which use gpu
 sudo fuser -v /dev/nvidia*
+# kill all the processes which use GPU
+kill -KILL `sudo fuser -v /dev/nvidia*`
+
+# bash previous command repeat/output
+!! or `!!`
+
 
 
