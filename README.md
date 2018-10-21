@@ -44,6 +44,9 @@ sudo ./cuda-samples.9.0.176-22781540-linux.run
 sudo bash -c "echo /usr/local/cuda/lib64/ > /etc/ld.so.conf.d/cuda.conf"
 sudo ldconfig
 
+# CUDA NN
+
+sudo dpkg -i libcudnn7_7.0.5.15–1+cuda9.0_amd64.deb # download from the official website
 
 
 
