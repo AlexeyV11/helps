@@ -48,5 +48,7 @@ sudo ldconfig
 
 sudo dpkg -i libcudnn7_7.0.5.15–1+cuda9.0_amd64.deb # download from the official website
 
+# conda create env
+conda create -n myenv python=3.6
 
 
