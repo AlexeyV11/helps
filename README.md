@@ -51,4 +51,26 @@ sudo dpkg -i libcudnn7_7.0.5.15–1+cuda9.0_amd64.deb # download from the offici
 # conda create env
 conda create -n myenv python=3.6
 
+# vnc desktop setup
+
+install - 
+sudo apt-get install gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal
+
+change ~/.vnc/xstartup to -
+/# Uncomment the following two lines for normal desktop:
+/# unset SESSION_MANAGER
+/# exec /etc/X11/xinit/xinitrc
+
+[ -x /etc/vnc/xstartup ] && exec /etc/vnc/xstartup
+[ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources
+xsetroot -solid grey
+vncconfig -iconic &
+x-terminal-emulator -geometry 80x24+10+10 -ls -title "$VNCDESKTOP Desktop" &
+x-window-manager &
+
+gnome-panel &
+gnome-settings-daemon &
+metacity &
+nautilus &
+
 
