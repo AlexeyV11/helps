@@ -57,18 +57,19 @@ install -
 sudo apt-get install gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal  
 
 change ~/.vnc/xstartup to -  
-/# Uncomment the following two lines for normal desktop:  
-/# unset SESSION_MANAGER  
-/# exec /etc/X11/xinit/xinitrc  
-  
+
+#!/bin/sh  
 [ -x /etc/vnc/xstartup ] && exec /etc/vnc/xstartup  
 [ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources  
 xsetroot -solid grey  
 vncconfig -iconic &  
-x-terminal-emulator -geometry 80x24+10+10 -ls -title "$VNCDESKTOP Desktop" &  
-x-window-manager &  
-  
-gnome-panel &  
+x-terminal-emulator -geometry 1670x886 -ls -title "$VNCDESKTOP desktop" &  
+#x-window-manager &  
+twm &
+
+
+gnome-terminal &  
+dbus-launch gnome-panel &  
 gnome-settings-daemon &  
 metacity &  
 nautilus &  
