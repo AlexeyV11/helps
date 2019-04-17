@@ -36,12 +36,19 @@ WaylandEnable=false and save. Then reboot. If this still does not work, then ple
 
 # CUDA install
 wget https://developer.nvidia.com/compute/cuda/9.0/Prod/local_installers/cuda_9.0.176_384.81_linux-run
+
 chmod +x cuda_9.0.176_384.81_linux-run
+
 ./cuda_9.0.176_384.81_linux-run --extract=$HOME
+
 cd $HOME
+
 sudo ./cuda-linux.9.0.176-22781540.run
+
 sudo ./cuda-samples.9.0.176-22781540-linux.run
+
 sudo bash -c "echo /usr/local/cuda/lib64/ > /etc/ld.so.conf.d/cuda.conf"
+
 sudo ldconfig
 
 # CUDA NN
